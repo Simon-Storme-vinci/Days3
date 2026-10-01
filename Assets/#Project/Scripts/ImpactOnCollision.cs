@@ -21,6 +21,6 @@ public class ImpactOnCollision : MonoBehaviour
             {
                 render.sprite = sprite;
             }
-        }
+        }   
     }
 }
