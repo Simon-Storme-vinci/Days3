@@ -5,7 +5,7 @@ using System.Collections;
 
 public class ChangeColorOnCollision : MonoBehaviour
 {
-    private TagHandle _playerTag;
+    private TagHandle _groundTag;
     private Renderer renderer;
     [SerializeField] private List<Color> colors;
     private int indexColor;
@@ -13,18 +13,14 @@ public class ChangeColorOnCollision : MonoBehaviour
     void Start()
     {
         renderer = GetComponent<Renderer>();
-    }
-
-    public void Onable()
-    {
-        _playerTag = TagHandle.GetExistingTag("Ground");        
-    }
+        _groundTag = TagHandle.GetExistingTag("Ground");
+    }   
 
     // Update is called once per frame
     void OnCollisionEnter(Collision collision)
     {
         // foreach(ContactPoint contact in collision.contacts) {
-            if(collision.collider.CompareTag(_playerTag)){
+            if(!collision.collider.CompareTag(_groundTag)){
                 return;
             }
 
