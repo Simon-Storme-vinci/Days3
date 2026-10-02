@@ -17,7 +17,5 @@ public class DestroyOnCollisionWithSphere : MonoBehaviour
             Destroy(gameObject);
         }
 
-        
-        
     }
 }

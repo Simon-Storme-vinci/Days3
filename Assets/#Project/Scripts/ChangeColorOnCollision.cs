@@ -19,22 +19,19 @@ public class ChangeColorOnCollision : MonoBehaviour
     // Update is called once per frame
     void OnCollisionEnter(Collision collision)
     {
-        // foreach(ContactPoint contact in collision.contacts) {
-            if(!collision.collider.CompareTag(_groundTag)){
-                return;
-            }
+        if(!collision.collider.CompareTag(_groundTag)){
+            return;
+        }
 
-            if(colors.Count == 0) {
-                return;
-            }
+        if(colors.Count == 0) {
+            return;
+        }
 
-            if(indexColor == colors.Count) {
-                indexColor = 0;
-            }
+        if(indexColor == colors.Count) {
+            indexColor = 0;
+        }
 
-            renderer.material.color = colors[indexColor];
-            indexColor++;
-        // }
-        
+        renderer.material.color = colors[indexColor];
+        indexColor++;
     }
 }
